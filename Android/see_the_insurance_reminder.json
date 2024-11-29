@@ -1,0 +1,17 @@
+{
+    "installId": "548b36a5-3f9b-4954-896e-82af4b67bc04-7267841700507164359",
+    "terminalModel": "23078RKD5C",
+    "terminalOSVersion": "34",
+    "location": "zh_CN",
+    "appVersion": "4.51.0.1.20241128",
+    "events": [
+        {
+            "context": {},
+            "id": "see_the_insurance_reminder",
+            "pageId": "01_01_0001",
+            "time": 1732851186600,
+            "type": "View"
+        }
+    ],
+    "clientType": "Android"
+}
