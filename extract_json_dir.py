@@ -2,7 +2,7 @@ import json
 import os
 
 
-def extract_and_write_jsons_by_client_type(folder_path, client_type, output_folder):
+def extract_and_write_jsons_by_client_type(folder_path, client_type, output_folder, terminalModel):
     # 确保输出文件夹存在，如果不存在则创建
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -19,7 +19,7 @@ def extract_and_write_jsons_by_client_type(folder_path, client_type, output_fold
 
             for line in lines:
                 json_data = json.loads(line)
-                if json_data.get('clientType') == client_type:
+                if json_data.get('clientType') == client_type and json_data.get('terminalModel') == terminalModel:
                     events = json_data.get('events')
                     if events and isinstance(events, list):
                         for event in events:
@@ -82,15 +82,17 @@ def format_source_data_to_json(source_data_input_folder, source_data_output_fold
 
 
 if __name__ == "__main__":
-    input_folder_path = 'D:/1-原生-android/埋点测试/1/'  # 替换为你的ndjson文件所在的文件夹路径
-    output_folder_path = 'D:/test_app_dec/Android'  # 替换为你的输出文件夹路径
+    input_folder_path = '/test_app_dec/A1_S3_tar'  # 替换为你的ndjson文件所在的文件夹路径，或保持当前默认
+    output_folder_path = '/test_app_dec/Android'  # 替换为你的输出文件夹路径，或保持当前默认
     your_client_type = 'Android'  # 替换你需要提取的客户端类型：iOS, Android
+    your_terminalModel = '23078RKD5C'  # 改成你的测试手机型号
 
-    sd_output_folder_path = 'D:/test_app_dec/A1_source_data'  # 替换为你的源数据格式化后的输出文件夹路径
+    sd_output_folder_path = '/test_app_dec/A1_source_data'  # 替换为你的源数据格式化后的输出文件夹路径，或保持当前默认
 
     extract_and_write_jsons_by_client_type(folder_path=input_folder_path,
                                            client_type=your_client_type,
-                                           output_folder=output_folder_path)
+                                           output_folder=output_folder_path,
+                                           terminalModel=your_terminalModel)
 
     format_source_data_to_json(source_data_input_folder=input_folder_path,
                                source_data_output_folder=sd_output_folder_path)

@@ -5,10 +5,10 @@ const zlib = require('zlib');
 const stream = require('stream');
 const { execSync } = require('child_process');
 
-const backupBaseDir = 'D:/1-原生-android/埋点测试/1';
+const backupBaseDir = '/test_app_dec/A1_S3_tar';  // 修改成你用于存放从S3中下载的tar包目录，或保持当前默认
 // const backupBaseDir = '/Users/gilboom/code/reolink/svc-device-telemetric-collect/backups';
 
-const privateKeyFile = 'D:/1-原生-android/埋点解密key/key.pem';
+const privateKeyFile = '/test_app_dec/A1_KEY/key.pem';  // 修改成你用于存放key.pem解密秘钥的路径，或保持当前默认
 // const privateKeyFile = '/Users/gilboom/code/reolink/svc-device-telemetric-collect/.keypair/key.pem';
 
 const privateKey = fs.readFileSync(privateKeyFile);
