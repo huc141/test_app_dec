@@ -1,6 +1,5 @@
 import json
 import os
-from doctest import NORMALIZE_WHITESPACE
 
 
 def extract_and_write_jsons_by_client_type(folder_path, client_type, output_folder, terminalModel=None):
