@@ -128,7 +128,7 @@ if __name__ == "__main__":
     input_folder_path = '/test_app_dec/A1_S3_tar'  # 替换为你的ndjson文件所在的文件夹路径，或保持当前默认
     output_folder_path = '/test_app_dec/iOS'  # 替换为你的输出文件夹路径，或保持当前默认
     your_client_type = 'iOS'  # 替换你需要提取的客户端类型：iOS, Android
-    your_terminalModel = 'iPhone14,2'  # 改成你的测试手机型号
+    your_terminalModel = 'iPhone14,2'  # 改成你的测试手机型号,
 
     sd_output_folder_path = '/test_app_dec/A1_source_data'  # 替换为你的源数据格式化后的输出文件夹路径，或保持当前默认
 
